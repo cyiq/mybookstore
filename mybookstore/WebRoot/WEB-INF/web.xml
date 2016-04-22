@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 	<display-name></display-name>
+ 		<!--给监听器配置资源文件  -->
+ 	<context-param>
+ 		<param-name>configLocation</param-name>
+ 		<param-value>/WEB-INF/page.properties</param-value>
+ 	</context-param>
+ 	<listener>
+ 		<listener-class>cn.bobo.listener.MyContextListener</listener-class>
+ 	</listener>
+ 	
+ 	<filter>
+ 		<filter-name>char</filter-name>
+ 		<filter-class>cn.bobo.filter.CharsetFilter</filter-class>
+ 	</filter>
+ 	<filter-mapping>
+ 		<filter-name>char</filter-name>
+ 		<url-pattern>/*</url-pattern>
+ 	</filter-mapping>
+ 	
+ 	<filter>
+ 		<filter-name>login</filter-name>
+ 		<filter-class>cn.bobo.filter.LoginFilter</filter-class>
+ 	</filter>
+ 	<filter-mapping>
+ 		<filter-name>login</filter-name>
+ 		<url-pattern>/secu/*</url-pattern>
+ 	</filter-mapping>
+  <servlet>
+    <servlet-name>IndexServlet</servlet-name>
+    <servlet-class>cn.bobo.index.IndexServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BookServlet</servlet-name>
+    <servlet-class>cn.bobo.book.BookServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BuyServlet</servlet-name>
+    <servlet-class>cn.bobo.buy.BuyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>cn.bobo.user.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>cn.bobo.order.OrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddressServlet</servlet-name>
+    <servlet-class>cn.bobo.address.AddressServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BookAddServlet</servlet-name>
+    <servlet-class>cn.bobo.book.BookAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CollectServlet</servlet-name>
+    <servlet-class>cn.bobo.collect.CollectServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>IndexServlet</servlet-name>
+    <url-pattern>/indexServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookServlet</servlet-name>
+    <url-pattern>/bookServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BuyServlet</servlet-name>
+    <url-pattern>/secu/BuyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/userServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/secu/OrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddressServlet</servlet-name>
+    <url-pattern>/secu/AddressServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookAddServlet</servlet-name>
+    <url-pattern>/bookAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CollectServlet</servlet-name>
+    <url-pattern>/secu/collectServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>
